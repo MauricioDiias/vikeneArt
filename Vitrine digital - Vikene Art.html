@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#08777a">
+    <title>Vikene Art | Arte feita à mão em Ilha Grande</title>
+    <style>
+        :root {
+            --teal: #08777a;
+            --deep: #153f43;
+            --mint: #e8f3ed;
+            --pink: #f4dfe4;
+            --ink: #203b3c;
+            --muted: #637777;
+            --paper: #fcfaf5;
+            --line: #e5e9e4
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif
+        }
+
+        a {
+            color: inherit
+        }
+
+        .top {
+            background: var(--deep);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: .73rem;
+            letter-spacing: .1em
+        }
+
+        .top b {
+            color: #a9e2d9;
+            margin: 0 9px
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 36px));
+            margin: auto
+        }
+
+        .nav {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .brand {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            text-decoration: none
+        }
+
+        .seal {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #bde9e0;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+            display: grid;
+            place-items: center;
+            font-size: 23px
+        }
+
+        .brand strong {
+            font: 600 1.25rem Georgia
+        }
+
+        .brand small {
+            display: block;
+            color: var(--muted);
+            font-size: .66rem;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+            margin-top: 3px
+        }
+
+        .nav a:last-child {
+            border: 1px solid #bfd4ce;
+            padding: 10px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 650
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr .9fr;
+            gap: 45px;
+            align-items: center;
+            padding: 55px 0
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            font-size: .72rem;
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            font-weight: 750
+        }
+
+        .hero h1 {
+            font: 500 clamp(2.45rem, 5vw, 4.2rem)/1.05 Georgia;
+            margin: 14px 0
+        }
+
+        .hero h1 em {
+            color: var(--teal);
+            font-weight: 400
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 490px
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 13px 18px;
+            border-radius: 8px;
+            background: var(--teal);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: .9rem
+        }
+
+        .feature {
+            height: 330px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 180px 180px 10px 10px;
+            background: var(--mint);
+            border: 8px solid white;
+            box-shadow: 0 10px 35px #16474315
+        }
+
+        .feature img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 38%
+        }
+
+        .feature span {
+            position: absolute;
+            bottom: 14px;
+            right: 14px;
+            background: #fffef2eF;
+            color: var(--deep);
+            padding: 9px 13px;
+            border-radius: 30px;
+            font: italic .82rem Georgia
+        }
+
+        .section {
+            padding: 20px 0 68px
+        }
+
+        .heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 22px
+        }
+
+        .heading h2 {
+            font: 500 2.1rem Georgia;
+            margin: 7px 0 0
+        }
+
+        .heading p {
+            color: var(--muted);
+            font-size: .84rem;
+            margin: 0
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px
+        }
+
+        .filter {
+            cursor: pointer;
+            background: white;
+            border: 1px solid var(--line);
+            color: #466262;
+            padding: 9px 14px;
+            border-radius: 30px;
+            font-weight: 650
+        }
+
+        .filter.active,
+        .filter:hover {
+            background: var(--deep);
+            color: #fff;
+            border-color: var(--deep)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #fff;
+            transition: .2s
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px #183d3a14
+        }
+
+        .photo {
+            height: 300px;
+            background: #e8f3ed;
+            position: relative
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover
+        }
+
+        .label {
+            position: absolute;
+            top: 11px;
+            left: 11px;
+            background: #fffef0ed;
+            border-radius: 20px;
+            padding: 6px 10px;
+            font-size: .68rem;
+            font-weight: 750;
+            color: var(--deep)
+        }
+
+        .info {
+            padding: 15px
+        }
+
+        .info h3 {
+            font: 500 1.16rem Georgia;
+            margin: 0 0 7px
+        }
+
+        .info p {
+            font-size: .81rem;
+            line-height: 1.5;
+            color: var(--muted);
+            margin: 0 0 14px;
+            min-height: 36px
+        }
+
+        .footrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #edf0eb;
+            padding-top: 12px
+        }
+
+        .value {
+            font-size: .8rem;
+            font-weight: 700;
+            color: var(--deep)
+        }
+
+        .ask {
+            font-size: .79rem;
+            font-weight: 750;
+            color: var(--teal);
+            text-decoration: none
+        }
+
+        .caption {
+            color: #7a8986;
+            font-size: .73rem;
+            margin: 16px 0 0
+        }
+
+        .about {
+            background: var(--mint);
+            padding: 46px 0
+        }
+
+        .aboutrow {
+            display: grid;
+            grid-template-columns: .65fr 1.35fr;
+            gap: 35px;
+            align-items: center
+        }
+
+        .brandpanel {
+            background: var(--teal);
+            min-height: 170px;
+            color: #fff;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            font: 1.6rem Georgia
+        }
+
+        .brandpanel span {
+            display: block;
+            font-size: 2.5rem;
+            margin-bottom: 7px
+        }
+
+        .about h2 {
+            font: 500 1.9rem Georgia;
+            margin: 8px 0 11px
+        }
+
+        .about p {
+            color: #577271;
+            line-height: 1.75;
+            margin: 0
+        }
+
+        .contact {
+            padding: 42px 0
+        }
+
+        .contactbox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            padding: 25px
+        }
+
+        .contact h2 {
+            font: 500 1.55rem Georgia;
+            margin: 0 0 6px
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin: 0;
+            font-size: .9rem
+        }
+
+        .bottom {
+            background: var(--deep);
+            color: white;
+            padding: 24px 0;
+            font-size: .8rem
+        }
+
+        .bottomrow {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center
+        }
+
+        .bottom a {
+            color: #bfe8de
+        }
+
+        .fine {
+            font-size: .68rem;
+            color: #b8d1cb;
+            margin-top: 5px
+        }
+
+        .hide {
+            display: none !important
+        }
+
+        @media(max-width:740px) {
+            .wrap {
+                width: calc(100% - 30px)
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 36px 0
+            }
+
+            .feature {
+                grid-row: 1;
+                height: 270px
+            }
+
+            .hero h1 {
+                font-size: 2.8rem
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px
+            }
+
+            .photo {
+                height: 235px
+            }
+
+            .heading {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .aboutrow {
+                grid-template-columns: 1fr
+            }
+
+            .brandpanel {
+                min-height: 130px
+            }
+
+            .contactbox {
+                align-items: flex-start;
+                flex-direction: column
+            }
+
+            .bottomrow {
+                align-items: flex-start;
+                flex-direction: column
+            }
+        }
+
+        @media(max-width:460px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .photo {
+                height: 330px
+            }
+
+            .feature {
+                height: 230px
+            }
+
+            .brand strong {
+                font-size: 1.08rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">VIKENE ART <b>✦</b> PEÇAS ÚNICAS FEITAS À MÃO <b>✦</b> ILHA GRANDE · PI</div>
+    <div class="wrap">
+        <header class="nav"><a class="brand" href="#inicio"><span class="seal">✿</span><span><strong>Vikene
+                        Art</strong><small>arte autoral da ilha</small></span></a><a
+                href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></header>
+        <main>
+            <section class="hero" id="inicio">
+                <div>
+                    <div class="eyebrow">Pinturas e criações artesanais</div>
+                    <h1>Leve com você<br><em>um pedaço do Delta.</em></h1>
+                    <p>Obras feitas à mão, inspiradas nas paisagens, nos animais e nas cores de Ilha Grande e do Delta
+                        do Parnaíba.</p><a class="cta" href="#pecas">Conheça algumas obras ↓</a>
+                </div>
+                <div class="feature"><img src="Captura de tela 2026-11-12 103950.png"
+                        alt="Pinturas artesanais representando o Delta do Parnaíba"><span>Feito à mão em Ilha
+                        Grande</span></div>
+            </section>
+            <section class="section" id="pecas">
+                <div class="heading">
+                    <div>
+                        <div class="eyebrow">Vitrine de pinturas</div>
+                        <h2>Arte para guardar uma lembrança</h2>
+                    </div>
+                    <p>Consulte com a artista a disponibilidade e o valor.</p>
+                </div>
+                <div class="filters" aria-label="Filtrar obras"><button class="filter active"
+                        data-filter="todas">Todas</button><button class="filter" data-filter="delta">Delta e
+                        paisagens</button><button class="filter" data-filter="fauna">Fauna</button><button
+                        class="filter" data-filter="natureza">Natureza</button></div>
+                <div class="grid">
+                    <article class="card" data-category="fauna delta">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 103901.png"
+                                alt="Pintura de peixe-boi em águas azuis"><span class="label">Fauna do Delta</span>
+                        </div>
+                        <div class="info">
+                            <h3>Peixe-boi</h3>
+                            <p>Pintura artesanal inspirada na vida das águas do Delta.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="natureza">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 103918.png"
+                                alt="Pintura de caju entre folhas verdes"><span class="label">Natureza</span></div>
+                        <div class="info">
+                            <h3>Caju e folhas</h3>
+                            <p>Cores vivas e detalhes inspirados na natureza.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="fauna delta">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 103928.png"
+                                alt="Pintura de caranguejo em paisagem de mangue"><span class="label">Fauna do
+                                Delta</span></div>
+                        <div class="info">
+                            <h3>Caranguejo no mangue</h3>
+                            <p>Uma cena de mangue pintada à mão.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="delta">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 103950.png"
+                                alt="Pequenas pinturas do Delta do Parnaíba com aves"><span class="label">Delta do
+                                Parnaíba</span></div>
+                        <div class="info">
+                            <h3>Voo sobre o Delta</h3>
+                            <p>Paisagem e aves em pequenas pinturas coloridas.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="fauna">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 104030.png"
+                                alt="Pintura azul de águas-vivas"><span class="label">Vida marinha</span></div>
+                        <div class="info">
+                            <h3>Águas azuis</h3>
+                            <p>Composição em azul inspirada na vida marinha.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="delta">
+                        <div class="photo"><img src="Captura de tela 2026-11-12 104059.png"
+                                alt="Pequena pintura de paisagem do Delta"><span class="label">Paisagem</span></div>
+                        <div class="info">
+                            <h3>Recanto do Delta</h3>
+                            <p>Paisagem em miniatura inspirada na região.</p>
+                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
+                                    href="https://www.instagram.com/vikene_art/" target="_blank"
+                                    rel="noopener">Consultar ↗</a></div>
+                        </div>
+                    </article>
+                </div>
+                <p class="caption">Protótipo com fotos dos prints enviados. Os títulos são descritivos e provisórios;
+                    confirme com Vitória os nomes oficiais, dimensões, preços e disponibilidade antes de divulgar como
+                    catálogo de venda.</p>
+            </section>
+            <section class="about" id="sobre">
+                <div class="wrap aboutrow">
+                    <div class="brandpanel">
+                        <div><span>✿</span>Vikene Art</div>
+                    </div>
+                    <div>
+                        <div class="eyebrow">Feito à mão em Ilha Grande</div>
+                        <h2>Uma lembrança com autoria e lugar</h2>
+                        <p>A Vikene Art cria peças únicas, pintadas à mão. Esta vitrine apresenta obras inspiradas na
+                            fauna, na natureza e nas paisagens do Delta do Parnaíba. Para saber onde encontrar uma peça,
+                            fale diretamente com a artista.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <div class="wrap contactbox">
+                    <div>
+                        <h2>Gostou de uma obra?</h2>
+                        <p>Consulte disponibilidade e valores pelo Instagram da Vikene Art.</p>
+                    </div><a class="cta" href="https://www.instagram.com/vikene_art/" target="_blank"
+                        rel="noopener">Visitar @vikene_art ↗</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="bottom">
+        <div class="wrap bottomrow">
+            <div><strong>Vikene Art · Ilha Grande, PI</strong>
+                <div class="fine">Vitrine demonstrativa feita com imagens fornecidas pelo educador.</div>
+            </div><a href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram
+                @vikene_art</a>
+        </div>
+    </footer>
+    <script>const bs = [...document.querySelectorAll('.filter')], cs = [...document.querySelectorAll('.card')]; bs.forEach(b => b.addEventListener('click', () => {bs.forEach(x => x.classList.remove('active')); b.classList.add('active'); const f = b.dataset.filter; cs.forEach(c => c.classList.toggle('hide', f !== 'todas' && !c.dataset.category.split(' ').includes(f)))}));</script>
+</body>
+
+</html>
