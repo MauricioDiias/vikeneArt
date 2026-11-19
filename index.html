@@ -160,7 +160,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 38%
+            object-position: center
         }
 
         .feature span {
@@ -250,7 +250,9 @@
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover
+            object-fit: contain;
+            padding: 8px;
+            background: #f4f3ee
         }
 
         .label {
@@ -490,8 +492,8 @@
                     <p>Obras feitas à mão, inspiradas nas paisagens, nos animais e nas cores de Ilha Grande e do Delta
                         do Parnaíba.</p><a class="cta" href="#pecas">Conheça algumas obras ↓</a>
                 </div>
-                <div class="feature"><img src="Captura de tela 2026-11-12 103950.png"
-                        alt="Pinturas artesanais representando o Delta do Parnaíba"><span>Feito à mão em Ilha
+                <div class="feature"><img src="assets/revoada-dos-guaras.jpg"
+                        alt="Pintura de guarás voando sobre o mangue"><span>Feito à mão em Ilha
                         Grande</span></div>
             </section>
             <section class="section" id="pecas">
@@ -502,84 +504,88 @@
                     </div>
                     <p>Consulte com a artista a disponibilidade e o valor.</p>
                 </div>
-                <div class="filters" aria-label="Filtrar obras"><button class="filter active"
-                        data-filter="todas">Todas</button><button class="filter" data-filter="delta">Delta e
-                        paisagens</button><button class="filter" data-filter="fauna">Fauna</button><button
-                        class="filter" data-filter="natureza">Natureza</button></div>
+                <div class="filters" aria-label="Filtrar obras">
+                    <button class="filter active" data-filter="todas">Todas</button>
+                    <button class="filter" data-filter="paisagens">Paisagens</button>
+                    <button class="filter" data-filter="fauna">Fauna</button>
+                    <button class="filter" data-filter="natureza">Natureza</button>
+                    <button class="filter" data-filter="personagens">Personagens</button>
+                </div>
                 <div class="grid">
-                    <article class="card" data-category="fauna delta">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 103901.png"
-                                alt="Pintura de peixe-boi em águas azuis"><span class="label">Fauna do Delta</span>
-                        </div>
+                    <article class="card" data-category="personagens">
+                        <div class="photo"><img src="assets/pequeno-principe.jpg" alt="Pintura do Pequeno Príncipe sob um céu estrelado" loading="lazy"><span class="label">Personagens</span></div>
                         <div class="info">
-                            <h3>Peixe-boi</h3>
-                            <p>Pintura artesanal inspirada na vida das águas do Delta.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
+                            <h3>Pequeno príncipe</h3>
+                            <p><strong>Medidas: 16 × 22 cm.</strong> Uma cena sob um céu estrelado, inspirada na história do Pequeno Príncipe.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="fauna paisagens">
+                        <div class="photo"><img src="assets/revoada.jpg" alt="Pintura de aves vermelhas em revoada sobre a paisagem" loading="lazy"><span class="label">Fauna e paisagem</span></div>
+                        <div class="info">
+                            <h3>Revoada</h3>
+                            <p><strong>Medidas: 16 × 22 cm.</strong> Aves vermelhas cruzam o céu sobre uma paisagem litorânea.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="paisagens">
+                        <div class="photo"><img src="assets/noite-estrelada.jpg" alt="Pintura de céu noturno estrelado sobre paisagem" loading="lazy"><span class="label">Paisagem</span></div>
+                        <div class="info">
+                            <h3>Noite estrelada</h3>
+                            <p><strong>Medidas: 20 × 30 cm.</strong> Paisagem noturna em tons azuis, com estrelas luminosas.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="fauna paisagens">
+                        <div class="photo"><img src="assets/gata-e-cabana.jpg" alt="Pintura de uma gata diante de uma cabana na paisagem" loading="lazy"><span class="label">Animais e paisagem</span></div>
+                        <div class="info">
+                            <h3>A gata e a cabana</h3>
+                            <p><strong>Medidas: 20 × 30 cm.</strong> Uma gata observa a cabana em meio à paisagem aberta.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="paisagens">
+                        <div class="photo"><img src="assets/pescadora.jpg" alt="Pintura de uma pescadora em paisagem costeira" loading="lazy"><span class="label">Paisagem</span></div>
+                        <div class="info">
+                            <h3>Pescadora</h3>
+                            <p><strong>Medidas: 20 × 30 cm.</strong> Figura de uma pescadora em uma paisagem costeira.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
+                        </div>
+                    </article>
+                    <article class="card" data-category="fauna paisagens">
+                        <div class="photo"><img src="assets/revoada-dos-guaras.jpg" alt="Pintura de guarás voando sobre mangue e água" loading="lazy"><span class="label">Fauna do Delta</span></div>
+                        <div class="info">
+                            <h3>Revoada dos guarás</h3>
+                            <p><strong>Medidas: 30 × 40 cm.</strong> Guarás voam sobre o mangue e as águas do Delta.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
                         </div>
                     </article>
                     <article class="card" data-category="natureza">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 103918.png"
-                                alt="Pintura de caju entre folhas verdes"><span class="label">Natureza</span></div>
+                        <div class="photo"><img src="assets/caju-vermelho.jpg" alt="Pintura de um caju vermelho entre folhas verdes" loading="lazy"><span class="label">Natureza</span></div>
                         <div class="info">
-                            <h3>Caju e folhas</h3>
-                            <p>Cores vivas e detalhes inspirados na natureza.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
-                        </div>
-                    </article>
-                    <article class="card" data-category="fauna delta">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 103928.png"
-                                alt="Pintura de caranguejo em paisagem de mangue"><span class="label">Fauna do
-                                Delta</span></div>
-                        <div class="info">
-                            <h3>Caranguejo no mangue</h3>
-                            <p>Uma cena de mangue pintada à mão.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
-                        </div>
-                    </article>
-                    <article class="card" data-category="delta">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 103950.png"
-                                alt="Pequenas pinturas do Delta do Parnaíba com aves"><span class="label">Delta do
-                                Parnaíba</span></div>
-                        <div class="info">
-                            <h3>Voo sobre o Delta</h3>
-                            <p>Paisagem e aves em pequenas pinturas coloridas.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
+                            <h3>Caju vermelho</h3>
+                            <p><strong>Medidas: 30 × 40 cm.</strong> Caju vermelho entre folhas largas, em composição tropical.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
                         </div>
                     </article>
                     <article class="card" data-category="fauna">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 104030.png"
-                                alt="Pintura azul de águas-vivas"><span class="label">Vida marinha</span></div>
+                        <div class="photo"><img src="assets/peixe-boi.jpg" alt="Pintura de peixe-boi em águas azuis" loading="lazy"><span class="label">Fauna do Delta</span></div>
                         <div class="info">
-                            <h3>Águas azuis</h3>
-                            <p>Composição em azul inspirada na vida marinha.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
+                            <h3>Peixe-boi</h3>
+                            <p><strong>Medidas: 30 × 40 cm.</strong> Peixe-boi representado em águas azuis e claras.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
                         </div>
                     </article>
-                    <article class="card" data-category="delta">
-                        <div class="photo"><img src="Captura de tela 2026-11-12 104059.png"
-                                alt="Pequena pintura de paisagem do Delta"><span class="label">Paisagem</span></div>
+                    <article class="card" data-category="personagens">
+                        <div class="photo"><img src="assets/submerso-no-olhar.jpg" alt="Pintura colorida com figura felina e muitos olhos" loading="lazy"><span class="label">Composição autoral</span></div>
                         <div class="info">
-                            <h3>Recanto do Delta</h3>
-                            <p>Paisagem em miniatura inspirada na região.</p>
-                            <div class="footrow"><span class="value">Valor a confirmar</span><a class="ask"
-                                    href="https://www.instagram.com/vikene_art/" target="_blank"
-                                    rel="noopener">Consultar ↗</a></div>
+                            <h3>Submerso no olhar</h3>
+                            <p><strong>Medidas: 30 × 40 cm.</strong> Composição expressiva de olhos e cores em torno de uma figura felina.</p>
+                            <div class="footrow"><span class="value">Preço sob consulta</span><a class="ask" href="https://www.instagram.com/vikene_art/" target="_blank" rel="noopener">Instagram ↗</a></div>
                         </div>
                     </article>
                 </div>
-                <p class="caption">Protótipo com fotos dos prints enviados. Os títulos são descritivos e provisórios;
-                    confirme com Vitória os nomes oficiais, dimensões, preços e disponibilidade antes de divulgar como
-                    catálogo de venda.</p>
+                <p class="caption">Títulos e medidas informados por Vitória. Consulte a artista para confirmar preço e disponibilidade de cada obra.</p>
             </section>
             <section class="about" id="sobre">
                 <div class="wrap aboutrow">
